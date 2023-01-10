@@ -80,7 +80,6 @@ const mostrarDatos = (data) => {
         tr.appendChild(tdOrigin);
         tr.appendChild(tdLastLocation);
         tr.appendChild(tdDetails);
-
     }
 }
 
