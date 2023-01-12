@@ -2,9 +2,7 @@ let Url = 'https://rickandmortyapi.com/api/character?page=1'
 let nextUrl;
 let prevUrl;
 let totalPages;
-
-const nextBtn = document.getElementById("next");
-const prevBtn = document.getElementById("prev");
+let divRow = document.getElementById("dataContainer");
 
 
 fetch(Url)
@@ -17,21 +15,23 @@ const mostrarDatos = (data) => {
 
     data.results.map(item => {
 
-        let divRow = document.getElementById("dataContainer");
         let divItem = document.createElement("div")
         divItem.classList.add("col-md-4");
 
         divItem.innerHTML = `
-        <div class="card mb-2 bg-dark text-white">
+        <div class="card mb-3 text-white border border-info-subtle">
                     <div class="row">
                       <div class="col-md-4">
-                        <img src="${item.image}" class="rounded mx-auto d-block ImgApi" alt="...">
+                        <img src="${item.image}" class="img-fluid ImgApi" alt="...">
                       </div>
                       <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">${item.name}</h5>
-                          <p class="card-text">${item.gender}</p>
-                          <p class="card-text"><small>${item.status}</small></p>
+                        <div class="card-body text-start">
+                          <h5 class="card-title">${item.id} - ${item.name}</h5><br>
+                          <h3"> <strong> Status:</strong> ${item.status}</h3><br>
+                          <h3"> <strong>Gender:</strong> ${item.gender}</h3><br>
+                          <h3"> <strong>Species:</strong> ${item.species}</h3><br>
+                          <h3"> <strong>Origin location:</strong> ${item.origin.name}</h3><br>
+                          
                         </div>
                       </div>
                     </div>
@@ -39,15 +39,17 @@ const mostrarDatos = (data) => {
 
         divRow.appendChild(divItem);
     })
+
+    nextUrl = data.info.next;
+    prevUrl = data.info.prev;
+    totalPages = data.info.pages;
+
 }
 
-
-
-/*
 //Siguiente pagina 
 function next() {
 
-    if (nextUrl == null) {
+    if (nextUrl === null || nextUrl === undefined) {
         alert("Error")
     }
 
@@ -62,10 +64,11 @@ function next() {
     }
 }
 
+
 //Pagina anterior
 function prev() {
 
-    if (prevUrl == null) {
+    if (prevUrl === null || prevUrl === undefined) {
         alert("Error")
     }
 
@@ -80,13 +83,14 @@ function prev() {
     }
 }
 
-//Eliminar contenido de la tabla
+
+
 function resetTable() {
-    while (tBody.hasChildNodes()) {
-        tBody.removeChild(tBody.firstChild);
+    while (divRow.hasChildNodes()) {
+        divRow.removeChild(divRow.firstChild);
     }
 }
-*/
+
 
 
 
