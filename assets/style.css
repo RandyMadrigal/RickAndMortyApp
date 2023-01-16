@@ -12,7 +12,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 10%;
+    padding-top: 8%;
+    
 }
 
 .container-fluid {
@@ -38,6 +39,10 @@ main {
 .card:hover {
     transform: scale(1.1);
     z-index: 1;
+}
+
+.gitLogo{
+    width: 40px;
 }
 
 .homeImg {
