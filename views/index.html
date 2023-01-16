@@ -1,72 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <title>Rick & Morty</title>
-</head>
-<body>
-
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-md-top">
-        <div class="container-fluid">
-          <a class="navbar-brand fw-bold" href="index.html">
-            <img src="../assets/Img/icon.png" alt="">
-          </a>
-
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active fw-bold fs-5" href="index.html">Character</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fw-bold fs-5" href="location.html">Location</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fw-bold fs-5" href="episodes.html">Episode</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="d-flex">
-            <input type="text" class="form-control w-100 mx-3" id="filterCharacter" placeholder="Character name">
-            <button type="button" class="btn btn-outline-primary">Search</button>
-          </div>
-
-        </div>
-      </nav>
-
-    <div class="container-fluid border-bottom border-info-subtle">
-
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
         <div class="row">
-            <div class="col-md-6 offset-3">
-                <img src="../assets/Img/logo.png" class="ImgLogo" alt="Error">
+          <div class="col-md-4">
+            <div
+              class="d-flex flex-column p-5 m-5"
+              aria-label="Vertical button group"
+            >
+              <a href="character.html">
+                <button
+                  type="button"
+                  class="btn btn-info w-100 fs-2 mb-4 animacion"
+                >
+                  Character
+                </button>
+              </a>
+
+              <a href="location.html">
+                <button
+                  type="button"
+                  class="btn btn-info w-100 fs-2 mb-4 animacion"
+                >
+                  Locations
+                </button>
+              </a>
+
+              <a href="episodes.html">
+                <button
+                  type="button"
+                  class="btn btn-info w-100 fs-2 mb-4 animacion"
+                >
+                  Episodes
+                </button>
+              </a>
             </div>
-   
-      
-        <div class="d-flex my-2"> 
-          <div class="flex-grow-1 justify-content-center">
-            <button type="button" class="btn btn-danger" onclick="prev()" >previous</button>
-            <button type="button" class="btn btn-success" onclick="next()">Next</button>
+          </div>
+          <div class="col-md-8 parent">
+            <img
+              src="../assets/Img/RickAndMorty.png"
+              class="homeImg"
+              alt="Error"
+            />
           </div>
         </div>
       </div>
-    </div>
+    </main>
 
-    <div class="container-fluid">
-
-        <div class="row" id="dataContainer">
-         
-            <!-- Items Generados dinamicamente -->
-             
-        </div>
-    </div>
-        
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
     <script src="../assets/app.js"></script>
-</body>
+  </body>
 </html>
