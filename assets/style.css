@@ -82,3 +82,13 @@ button:hover {
 p {
     margin-left: 0%;
 }
+
+i{
+    font-size: 70px;
+}
+
+i:hover {
+    transform: scale(1.1);
+    z-index: 1;
+    color: white;
+}
