@@ -6,8 +6,7 @@ for (let i = 0; i < btnMenu.length; i++) {
 }
 
 const homeImg = document.querySelector(".homeImg")
-homeImg.classList.add('animate__animated','animate__fadeIn')
+homeImg.classList.add('animate__animated','animate__pulse')
+homeImg.classList.add('animate__infinite','infinite')
 homeImg.style.setProperty('--animate-duration', '3.0s');
-
-
 

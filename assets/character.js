@@ -32,11 +32,10 @@ function mostrarDatos(data) {
                       </div>
                       <div class="col-md-7">
                         <div class="card-body text-start">
-                          <p class="card-title fs-4 fw-bold">${item.id}- ${item.name}</p><br>
-                          <p class="text-start fs-5"> <strong>Status:</strong> ${item.status}</p>
-                          <p class="text-start fs-5"> <strong>Gender:</strong> ${item.gender}</p>
-                          <p class="text-start fs-5"> <strong>Species:</strong> ${item.species}</p>
-                          <p class="text-start fs-5"><strong>Origin location:</strong> ${item.origin.name}</h3>
+                          <p class="card-title fs-5 fw-bold">${item.id}- ${item.name}</p><br>
+                          <p class="text-start fs-5"> ${item.status}</p>
+                          <p class="text-start fs-5"> ${item.gender} - ${item.species}</p>
+                          <p class="text-start fs-5"> <strong> Origin location:</strong> ${item.origin.name}</h3>
                         </div>
                       </div>
                     </div>

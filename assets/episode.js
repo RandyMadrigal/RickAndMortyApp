@@ -1,8 +1,7 @@
 let contador = 1;
-let Url = `https://rickandmortyapi.com/api/location/1`;
-let residents = []
-let residentContainer = document.getElementById("residentContainer");
-
+let Url = `https://rickandmortyapi.com/api/episode/1`;
+let character = []
+let episodeContainer = document.getElementById("episodeContainer");
 
 fetchData()
 
@@ -16,36 +15,36 @@ function fetchData() {
 
 function mostrarDatos(data) {
 
-    let locationData = document.getElementById("LocationData")
+    let episodeData = document.getElementById("episodeData")
 
-        residents = data.residents;
+    character = data.characters;
 
-        locationData.innerHTML = `
-        <h1> ${data.id}-Residents of <strong>${data.name}</strong> </h1>
-        <h2> ${data.dimension}</h2>
-        <h2> ${data.type}</h2>
+    episodeData.innerHTML = `
+        <h1> Cap: ${data.id} - <strong>${data.name}</strong></h1>
+        <h2> ${data.air_date}</h2>
+        <h2> episode: ${data.episode}</h2>
         `    
-    if(residents.length == 0 || residents == null){
+    if(character.length == 0 || character == null){
 
-        let residentDiv = document.createElement("div")
-        residentDiv.classList.add("col-md-3");
-        residentDiv.style.marginBottom = "450px";
+        let episodeDiv = document.createElement("div")
+        episodeDiv.classList.add("col-md-3");
+        episodeDiv.style.marginBottom = "450px";
 
         residentContainer.innerHTML = `
         <h1 class="text-white"> <strong> NO CHARACTERS IN THIS LOCATION </strong></h1>
         `
-        residentContainer.appendChild(residentDiv)
+        episodeContainer.appendChild(episodeDiv)
     }
 
-    for(let i=0;i<residents.length;i++){
+    for(let i=0;i<character.length;i++){
 
-        let residentDiv = document.createElement("div")
-        residentDiv.classList.add("col-md-4");
+        let episodeDiv = document.createElement("div")
+        episodeDiv.classList.add("col-md-4");
         
-        fetch(residents[i])
+        fetch(character[i])
             .then(response => response.json())
             .then(data => {             
-                residentDiv.innerHTML = `
+                episodeDiv.innerHTML = `
                         <div class="card mb-4 mt-3 text-white border border-info-subtle">
                             <div class="row">
                             <div class="col-md-6">
@@ -53,7 +52,7 @@ function mostrarDatos(data) {
                             </div>
                             <div class="col-md-6">
                                 <div class="card-body text-center">
-                                <p class="card-title fs-4 fw-bold mt-5"> ${data.id} - ${data.name} </p><br>
+                                <p class="card-title fs-4 fw-bold mt-5"> ${data.id} - ${data.name}  </p><br>
                                 <p class="fs-5"> <strong>Status:</strong> ${data.status} </p>
                                 </div>
                             </div>
@@ -61,7 +60,7 @@ function mostrarDatos(data) {
                             </div>
                         </div>
                     `  
-                residentContainer.appendChild(residentDiv)
+                    episodeContainer.appendChild(episodeDiv)
             })
             .catch(err => console.log('error', err));
     }
@@ -93,7 +92,7 @@ function next() {
 
         CounterManager(contador)
 
-        fetch(`https://rickandmortyapi.com/api/location/${contador}`)
+        fetch(`https://rickandmortyapi.com/api/episode/${contador}`)
             .then(response => response.json())
             .then(data => mostrarDatos(data))
             .catch(err => console.log('error', err));
@@ -110,7 +109,7 @@ function prev() {
         
     CounterManager(contador)
 
-    fetch(`https://rickandmortyapi.com/api/location/${contador}`)
+    fetch(`https://rickandmortyapi.com/api/episode/${contador}`)
         .then(response => response.json())
         .then(data => mostrarDatos(data))
         .catch(err => console.log('error', err));
@@ -120,8 +119,8 @@ function prev() {
 
 //Reiniciar tabla.
 function resetTable() {
-    while (residentContainer.hasChildNodes()) {
-        residentContainer.removeChild(residentContainer.firstChild);
+    while (episodeContainer.hasChildNodes()) {
+        episodeContainer.removeChild(episodeContainer.firstChild);
     }
 }
 
@@ -132,8 +131,8 @@ function CounterManager(_contador){
         contador = 1;
     } 
 
-    if(_contador > 126){
+    if(_contador > 51){
         _Toast("No more content")
-        contador = 126;
+        contador = 51;
     } 
 }
